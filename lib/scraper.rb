@@ -12,17 +12,18 @@ class Scraper
   def get_page
     doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses")) #this is how we get a web page
 
-      # doc.css(".post").each do |post|
-      #   course = Course.new
-      #   course.title = post.css("h2").text
-      #   course.schedule = post.css(".date").text
-      #   course.description = post.css("p").text
-      # end
+      doc.css(".post").each do |post|
+        course = Course.new
+        course.title = post.css("h2").text
+        course.schedule = post.css(".date").text
+        course.description = post.css("p").text
+      end
 
   end
 
   def get_courses
-
+    self.get_page.css(".post")  #The #get_courses method should operate on the HTML page
+    #and return the collection of Nokogiri XML elements that describe each course.
   end
 
   def print_courses
