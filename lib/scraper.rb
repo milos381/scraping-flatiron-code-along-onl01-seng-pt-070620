@@ -6,7 +6,9 @@ require_relative './course.rb'
 class Scraper
 
   def make_courses
-
+    #The make_courses method should operate on the collection of course offering Nokogiri XML elements
+    #that was returned by the .get_courses method. The .make_courses method should iterate over the collection
+    #and make a new instance of Course class for each one while assigning it the appropriate attributes:
   end
 
   def get_page
