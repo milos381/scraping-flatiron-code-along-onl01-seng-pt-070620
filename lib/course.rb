@@ -1,2 +1,9 @@
 class Course
+
+
+
+
+
+
+
 end
