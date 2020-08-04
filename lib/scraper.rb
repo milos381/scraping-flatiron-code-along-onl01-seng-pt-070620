@@ -9,6 +9,12 @@ class Scraper
     #The make_courses method should operate on the collection of course offering Nokogiri XML elements
     #that was returned by the .get_courses method. The .make_courses method should iterate over the collection
     #and make a new instance of Course class for each one while assigning it the appropriate attributes:
+    self.get_courses.each do |post|
+      course = Course.new
+      course.title = post.css("h2").text
+      course.schedule = post.css(".date").text
+      course.description = post.css("p").text
+    end
   end
 
   def get_page
